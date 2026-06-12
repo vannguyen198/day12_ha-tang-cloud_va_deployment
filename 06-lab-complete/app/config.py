@@ -3,7 +3,6 @@ import os
 import logging
 from dataclasses import dataclass, field
 
-
 @dataclass
 class Settings:
     # Server

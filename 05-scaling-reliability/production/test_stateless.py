@@ -17,7 +17,6 @@ import urllib.error
 BASE_URL = "http://localhost:8080"
 session_id = None
 
-
 def post(path: str, data: dict) -> dict:
     req = urllib.request.Request(
         f"{BASE_URL}{path}",
@@ -28,11 +27,9 @@ def post(path: str, data: dict) -> dict:
     with urllib.request.urlopen(req) as resp:
         return json.loads(resp.read())
 
-
 def get(path: str) -> dict:
     with urllib.request.urlopen(f"{BASE_URL}{path}") as resp:
         return json.loads(resp.read())
-
 
 print("=" * 60)
 print("Stateless Scaling Demo")

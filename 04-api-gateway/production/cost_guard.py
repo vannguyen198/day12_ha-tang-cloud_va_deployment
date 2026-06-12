@@ -15,7 +15,6 @@ from fastapi import HTTPException
 
 logger = logging.getLogger(__name__)
 
-
 # Giá token (tham khảo, thay đổi theo model)
 PRICE_PER_1K_INPUT_TOKENS = 0.00015   # GPT-4o-mini: $0.15/1M input
 PRICE_PER_1K_OUTPUT_TOKENS = 0.0006   # GPT-4o-mini: $0.60/1M output
@@ -122,7 +121,6 @@ class CostGuard:
             "budget_remaining_usd": max(0, self.daily_budget_usd - record.total_cost_usd),
             "budget_used_pct": round(record.total_cost_usd / self.daily_budget_usd * 100, 1),
         }
-
 
 # Singleton
 cost_guard = CostGuard(daily_budget_usd=1.0, global_daily_budget_usd=10.0)
